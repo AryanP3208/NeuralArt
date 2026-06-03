@@ -6,3 +6,11 @@
 __pycache__/
 **/__pycache__/
 *.pyc
+
+# Virtualenvs and env files
+.venv/
+.env
+
+# Uploads and generated outputs
+static/uploads/
+NST_Code/experiment/

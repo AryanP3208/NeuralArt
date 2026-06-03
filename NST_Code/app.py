@@ -16,7 +16,8 @@ from utils.utils import adaptive_instance_normalization, calc_mean_std
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'supersecretkey'
+# Read secret key from environment for production; fallback for local dev
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'supersecretkey')
 # Use absolute upload folder inside the app package so send_from_directory works
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
 app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg'}
